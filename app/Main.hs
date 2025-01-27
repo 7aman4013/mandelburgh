@@ -124,7 +124,7 @@ generateM width height centerX centerY zoom aspectRatio =
     generateImage pixelRenderer width height
   where
     -- Generate rows in parallel in blocks
-    blockSize = 1000 -- Blocks didnt seem to help very much unless massive
+    blockSize = 100 -- Blocks didnt seem to help very much unless massive
     !rowBlocks = force $ parMap rpar
         (\block ->
             [generateRowM width y height centerX centerY zoom aspectRatio
