@@ -19,7 +19,7 @@ import Data.Time (getCurrentTime, diffUTCTime)
 instance NFData PixelRGB8 where
     rnf (PixelRGB8 r g b) = r `seq` g `seq` b `seq` ()
 
--- Constants moved to top level for better optimization
+---- Constants moved to top level
 maxIter :: Int
 maxIter = 1000
 
@@ -30,8 +30,8 @@ juliaC :: Complex Double
 juliaC = (-0.2) :+ 0.8  -- This gives a nice looking Julia set
 
 defaultWidth, defaultHeight :: Int
-defaultWidth  = 4000
-defaultHeight = 4000
+defaultWidth  = 1000
+defaultHeight = 1000
 
 defaultZoom, defaultCenterX, defaultCenterY :: Double
 defaultZoom   = 0.01 -- Bigger values = less zoom
@@ -124,7 +124,7 @@ generateM width height centerX centerY zoom aspectRatio =
     generateImage pixelRenderer width height
   where
     -- Generate rows in parallel in blocks
-    blockSize = 1000 -- Process rows in blocks of N to reduce overhead
+    blockSize = 1000 -- Blocks didnt seem to help very much unless massive
     !rowBlocks = force $ parMap rpar
         (\block ->
             [generateRowM width y height centerX centerY zoom aspectRatio
@@ -178,7 +178,7 @@ generateJ width height centerX centerY zoom aspectRatio =
     generateImage pixelRenderer width height
   where
     -- Generate rows in parallel in blocks
-    blockSize = 1000
+    blockSize = 1000 -- Blocks didnt seem to help very much unless massive
     !rowBlocks = force $ parMap rpar
         (\block ->
             [generateRowJ width y height centerX centerY zoom aspectRatio
