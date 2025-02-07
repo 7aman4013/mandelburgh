@@ -1,0 +1,226 @@
+	Fri Feb  7 20:11 2025 Time and Allocation Profiling Report  (Final)
+
+	   COMPETITION +RTS -p -P -RTS
+
+	total time  =       10.86 secs   (10858 ticks @ 1000 us, 1 processor)
+	total alloc = 20,760,284,392 bytes  (excludes profiling overheads)
+
+COST CENTRE          MODULE    SRC                           %time %alloc  ticks     bytes
+
+generateRow.\        Main      app/Main.hs:(149,9)-(152,35)   56.6   70.6   6143 14646816904
+generateRow.\.result Main      app/Main.hs:151:13-39          36.4   28.9   3949 5991799136
+generateRow          Main      app/Main.hs:(147,1)-(152,35)    5.7    0.4    622  88168000
+
+
+                                                                                                                                                          individual      inherited
+COST CENTRE                          MODULE                                   SRC                                                      no.     entries  %time %alloc   %time %alloc  ticks     bytes
+
+MAIN                                 MAIN                                     <built-in>                                               338           0    0.0    0.0   100.0  100.0      0       640
+ CAF                                 Control.Parallel.Strategies              <entire-module>                                          618           0    0.0    0.0     0.0    0.0      0        32
+  parList                            Control.Parallel.Strategies              Control/Parallel/Strategies.hs:552:1-24                  704           1    0.0    0.0     0.0    0.0      0         0
+  runEval                            Control.Parallel.Strategies              Control/Parallel/Strategies.hs:219:1-42                  699           1    0.0    0.0     0.0    0.0      0         0
+ CAF                                 Data.Time.Clock.Internal.NominalDiffTime <entire-module>                                          613           0    0.0    0.0     0.0    0.0      0        64
+ CAF                                 Codec.Picture.Metadata                   <entire-module>                                          600           0    0.0    0.0     0.0    0.0      0         0
+  empty                              Codec.Picture.Metadata                   src/Codec/Picture/Metadata.hs:274:1-24                   783           1    0.0    0.0     0.0    0.0      0         0
+ CAF                                 Codec.Picture.Png.Internal.Export        <entire-module>                                          586           0    0.0    0.0     0.0    0.0      0        40
+  mkRawChunk                         Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:(196,1)-(201,3)   842           1    0.0    0.0     0.0    0.0      0         0
+   pngComputeCrc                     Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:(443,1)-(447,52)  844           0    0.0    0.0     0.0    0.0      0        88
+    unBox                            Data.Stream.Monadic                      src/Data/Stream/Monadic.hs:116:20-24                     846           4    0.0    0.0     0.0    0.0      0         0
+    unId                             Data.Vector.Fusion.Util                  src/Data/Vector/Fusion/Util.hs:25:21-24                  845           4    0.0    0.0     0.0    0.0      0         0
+ CAF                                 Codec.Picture.Png.Internal.Type          <entire-module>                                          585           0    0.0    0.0     0.0    0.0      0     23648
+  unId                               Data.Vector.Fusion.Util                  src/Data/Vector/Fusion/Util.hs:25:21-24                  776         257    0.0    0.0     0.0    0.0      0         0
+  iDATSignature                      Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:390:1-32          836           1    0.0    0.0     0.0    0.0      0       392
+  iENDSignature                      Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:395:1-32          843           1    0.0    0.0     0.0    0.0      0       392
+  iHDRSignature                      Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:381:1-32          759           1    0.0    0.0     0.0    0.0      0       392
+  pngComputeCrc                      Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:(443,1)-(447,52)  768           1    0.0    0.0     0.0    0.0      0         0
+  pngSignature                       Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:373:1-55          758           1    0.0    0.0     0.0    0.0      0       136
+  sChunks                            Data.Vector.Fusion.Bundle.Monadic        src/Data/Vector/Fusion/Bundle/Monadic.hs:122:30-36       775           1    0.0    0.0     0.0    0.0      0         0
+  sSize                              Data.Vector.Fusion.Bundle.Monadic        src/Data/Vector/Fusion/Bundle/Monadic.hs:124:30-34       772           1    0.0    0.0     0.0    0.0      0         0
+  sizeOf                             Data.Primitive.Types                     Data/Primitive/Types.hs:170:1-25                         773           1    0.0    0.0     0.0    0.0      0         0
+  upperBound                         Data.Vector.Fusion.Bundle.Size           src/Data/Vector/Fusion/Bundle/Size.hs:(129,1)-(131,30)   771           1    0.0    0.0     0.0    0.0      0         0
+ CAF                                 Codec.Picture.Png.Internal.Metadata      <entire-module>                                          584           0    0.0    0.0     0.0    0.0      0         0
+  foldMap                            Codec.Picture.Metadata                   src/Codec/Picture/Metadata.hs:233:1-55                   784           1    0.0    0.0     0.0    0.0      0        16
+   foldl'                            Codec.Picture.Metadata                   src/Codec/Picture/Metadata.hs:229:1-52                   785           1    0.0    0.0     0.0    0.0      0         0
+  encodeMetadatas                    Codec.Picture.Png.Internal.Metadata      src/Codec/Picture/Png/Internal/Metadata.hs:166:1-70      780           0    0.0    0.0     0.0    0.0      0        16
+   lookup                            Codec.Picture.Metadata                   src/Codec/Picture/Metadata.hs:(256,1)-(260,23)           781           1    0.0    0.0     0.0    0.0      0         0
+ CAF                                 Codec.Compression.Zlib                   <entire-module>                                          578           0    0.0    0.0     0.0    0.0      0         0
+  compress                           Codec.Compression.Zlib                   Codec/Compression/Zlib.hs:98:1-45                        790           1    0.0    0.0     0.0    0.0      0        16
+   compressWith                      Codec.Compression.Zlib                   Codec/Compression/Zlib.hs:111:1-43                       792           0    0.0    0.0     0.0    0.0      0         0
+    compress                         Codec.Compression.Zlib.Internal          Codec/Compression/Zlib/Internal.hs:(484,1)-(486,61)      793           1    0.0    0.0     0.0    0.0      0       120
+  compressWith                       Codec.Compression.Zlib                   Codec/Compression/Zlib.hs:111:1-43                       791           1    0.0    0.0     0.0    0.0      0        32
+ CAF                                 Codec.Compression.Zlib.Internal          <entire-module>                                          577           0    0.0    0.0     0.0    0.0      0       136
+  defaultCompressParams              Codec.Compression.Zlib.Internal          Codec/Compression/Zlib/Internal.hs:(162,1)-(170,1)       803           1    0.0    0.0     0.0    0.0      0         0
+  compress                           Codec.Compression.Zlib.Internal          Codec/Compression/Zlib/Internal.hs:(484,1)-(486,61)      794           0    0.0    0.0     0.0    0.0      0        40
+   foldCompressStreamWithInput       Codec.Compression.Zlib.Internal          Codec/Compression/Zlib/Internal.hs:(447,1)-(461,16)      795           1    0.0    0.0     0.0    0.0      0         0
+ CAF                                 Codec.Compression.Zlib.Stream            <entire-module>                                          576           0    0.0    0.0     0.0    0.0      0       128
+  defaultCompression                 Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:654:1-39               804           1    0.0    0.0     0.0    0.0      0         0
+  defaultMemoryLevel                 Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:774:1-34               807           1    0.0    0.0     0.0    0.0      0         0
+  defaultStrategy                    Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:822:1-33               808           1    0.0    0.0     0.0    0.0      0         0
+  defaultWindowBits                  Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:720:1-33               806           1    0.0    0.0     0.0    0.0      0         0
+  deflateMethod                      Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:633:1-24               805           1    0.0    0.0     0.0    0.0      0         0
+  finalise                           Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:949:1-63               832           1    0.0    0.0     0.0    0.0      0         0
+  inputBufferEmpty                   Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:158:1-48               815           1    0.0    0.0     0.0    0.0      0         0
+  mkState                            Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(406,1)-(417,57)       800           1    0.0    0.0     0.0    0.0      0         0
+  outputBufferBytesAvailable         Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:219:1-40               831           1    0.0    0.0     0.0    0.0      0         0
+  outputBufferFull                   Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:231:1-57               818           1    0.0    0.0     0.0    0.0      0         0
+  outputBufferSpaceRemaining         Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:225:1-39               820           1    0.0    0.0     0.0    0.0      0         0
+  popOutputBuffer                    Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(202,1)-(214,38)       829           1    0.0    0.0     0.0    0.0      0         0
+  unsafeLiftIO                       Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(429,1)-(431,49)       810           1    0.0    0.0     0.0    0.0      0         0
+  zlibFormat                         Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:602:1-17               812           1    0.0    0.0     0.0    0.0      0         0
+ CAF                                 Data.Primitive.MachDeps                  <entire-module>                                          553           0    0.0    0.0     0.0    0.0      0         0
+  sIZEOF_WORD32                      Data.Primitive.MachDeps                  Data/Primitive/MachDeps.hs:107:1-17                      774           1    0.0    0.0     0.0    0.0      0         0
+ CAF                                 Data.Fixed                               <entire-module>                                          487           0    0.0    0.0     0.0    0.0      1        16
+ CAF                                 GHC.Conc.Signal                          <entire-module>                                          451           0    0.0    0.0     0.0    0.0      0       640
+ CAF                                 GHC.Conc.Sync                            <entire-module>                                          450           0    0.0    0.0     0.0    0.0      0        16
+ CAF                                 GHC.IO.Encoding                          <entire-module>                                          433           0    0.0    0.0     0.0    0.0      1      2976
+ CAF                                 GHC.IO.Encoding.Iconv                    <entire-module>                                          431           0    0.0    0.0     0.0    0.0      0       200
+ CAF                                 GHC.IO.FD                                <entire-module>                                          424           0    0.0    0.0     0.0    0.0      0        48
+ CAF                                 GHC.IO.Handle.FD                         <entire-module>                                          422           0    0.0    0.0     0.0    0.0      0     34736
+ CAF                                 Text.Printf                              <entire-module>                                          381           0    0.0    0.0     0.0    0.0      1       320
+ CAF:b_r7dK                          Main                                     <no location info>                                       649           0    0.0    0.0     0.0    0.0      0         0
+  generateFractal                    Main                                     app/Main.hs:(156,1)-(172,46)                             709           0    0.0    0.0     0.0    0.0      0         0
+   generateFractal.blockSize         Main                                     app/Main.hs:160:5-60                                     710           0    0.0    0.0     0.0    0.0      0        32
+ CAF:bailoutRadius                   Main                                     app/Main.hs:30:1-13                                      633           0    0.0    0.0     0.0    0.0      0        16
+  bailoutRadius                      Main                                     app/Main.hs:30:1-22                                      737           1    0.0    0.0     0.0    0.0      0         0
+ CAF:defaultCenterX                  Main                                     app/Main.hs:41:1-14                                      661           0    0.0    0.0     0.0    0.0      0        16
+  defaultCenterX                     Main                                     app/Main.hs:41:1-24                                      691           1    0.0    0.0     0.0    0.0      0         0
+ CAF:defaultCenterY                  Main                                     app/Main.hs:42:1-14                                      632           0    0.0    0.0     0.0    0.0      0        16
+  defaultCenterY                     Main                                     app/Main.hs:42:1-23                                      692           1    0.0    0.0     0.0    0.0      0         0
+ CAF:defaultHeight                   Main                                     app/Main.hs:37:1-13                                      630           0    0.0    0.0     0.0    0.0      0        16
+  defaultHeight                      Main                                     app/Main.hs:37:1-20                                      682           1    0.0    0.0     0.0    0.0      0         0
+ CAF:defaultWidth                    Main                                     app/Main.hs:36:1-12                                      629           0    0.0    0.0     0.0    0.0      0        16
+  defaultWidth                       Main                                     app/Main.hs:36:1-20                                      680           1    0.0    0.0     0.0    0.0      0         0
+ CAF:defaultZoom                     Main                                     app/Main.hs:40:1-11                                      631           0    0.0    0.0     0.0    0.0      0        16
+  defaultZoom                        Main                                     app/Main.hs:40:1-21                                      693           1    0.0    0.0     0.0    0.0      0         0
+ CAF:generateM                       Main                                     app/Main.hs:176:1-9                                      664           0    0.0    0.0     0.0    0.0      0        16
+  generateM                          Main                                     app/Main.hs:176:1-44                                     689           1    0.0    0.0     0.0    0.0      0         0
+ CAF:lvl115_r7eB                     Main                                     <no location info>                                       663           0    0.0    0.0     0.0    0.0      0        16
+ CAF:lvl119_r7eF                     Main                                     <no location info>                                       666           0    0.0    0.0     0.0    0.0      0       640
+ CAF:lvl122_r7eI                     Main                                     <no location info>                                       667           0    0.0    0.0     0.0    0.0      0       896
+ CAF:lvl123_r7eJ                     Main                                     <no location info>                                       668           0    0.0    0.0     0.0    0.0      0         0
+  main                               Main                                     app/Main.hs:(182,1)-(216,43)                             687           0    0.0    0.0     0.0    0.0      0         0
+   main.(...)                        Main                                     app/Main.hs:(195,9)-(197,52)                             688           0    0.0    0.0     0.0    0.0      0        16
+ CAF:lvl129_r7eP                     Main                                     <no location info>                                       671           0    0.0    0.0     0.0    0.0      0      1280
+ CAF:lvl132_r7eS                     Main                                     <no location info>                                       672           0    0.0    0.0     0.0    0.0      0      1600
+ CAF:lvl134_r7eU                     Main                                     <no location info>                                       673           0    0.0    0.0     0.0    0.0      0      1728
+ CAF:lvl38_r7d3                      Main                                     <no location info>                                       635           0    0.0    0.0     0.0    0.0      0        16
+ CAF:lvl63_r7dF                      Main                                     <no location info>                                       646           0    0.0    0.0     0.0    0.0      0         0
+  generateRow                        Main                                     app/Main.hs:(147,1)-(152,35)                             743           0    0.0    0.0     0.0    0.0      0         0
+   generateRow.\                     Main                                     app/Main.hs:(149,9)-(152,35)                             744           0    0.0    0.0     0.0    0.0      0        16
+ CAF:lvl65_r7dJ                      Main                                     <no location info>                                       648           0    0.0    0.0     0.0    0.0      0         0
+  generateRow                        Main                                     app/Main.hs:(147,1)-(152,35)                             739           0    0.0    0.0     0.0    0.0      0         0
+   generateRow.\                     Main                                     app/Main.hs:(149,9)-(152,35)                             740           0    0.0    0.0     0.0    0.0      0       368
+ CAF:main1                           Main                                     <no location info>                                       674           0    0.0    0.0     0.0    0.0      0        16
+  main                               Main                                     app/Main.hs:(182,1)-(216,43)                             676           1    0.0    0.0     0.0    0.0      0         0
+ CAF:maxIter                         Main                                     app/Main.hs:27:1-7                                       628           0    0.0    0.0     0.0    0.0      0        16
+  maxIter                            Main                                     app/Main.hs:27:1-14                                      736           1    0.0    0.0     0.0    0.0      0         0
+ CAF:v_r7er                          Main                                     <no location info>                                       659           0    0.0    0.0     0.0    0.0      0         0
+  generateFractal                    Main                                     app/Main.hs:(156,1)-(172,46)                             701           0    0.0    0.0     0.0    0.0      0         0
+   generateFractal.rows              Main                                     app/Main.hs:(163,5)-(170,26)                             702           0    0.0    0.0     0.0    0.0      0         0
+    parMap                           Control.Parallel.Strategies              Control/Parallel/Strategies.hs:616:1-48                  703           0    0.0    0.0     0.0    0.0      0        16
+     parList                         Control.Parallel.Strategies              Control/Parallel/Strategies.hs:552:1-24                  705           0    0.0    0.0     0.0    0.0      0        56
+      rparWith                       Control.Parallel.Strategies              Control/Parallel/Strategies.hs:494:1-32                  711           1    0.0    0.0     0.0    0.0      0         0
+ main                                Main                                     app/Main.hs:(182,1)-(216,43)                             677           0    0.0    0.0   100.0  100.0      0     29312
+  main.(...)                         Main                                     app/Main.hs:(195,9)-(197,52)                             684           1    0.0    0.0    99.3  100.0      0        64
+   generateM                         Main                                     app/Main.hs:176:1-44                                     690           0    0.0    0.0    99.3  100.0      0       144
+    generateFractal                  Main                                     app/Main.hs:(156,1)-(172,46)                             695           1    0.2    0.0    99.3  100.0     19   3064152
+     generateFractal.pixelRenderer   Main                                     app/Main.hs:172:5-46                                     749     1000000    0.1    0.1     0.1    0.1     14  24000000
+      array#                         Data.Primitive.Array                     Data/Primitive/Array.hs:69:5-10                          751     1001000    0.0    0.0     0.0    0.0      0         0
+      unBox                          Data.Stream.Monadic                      src/Data/Stream/Monadic.hs:116:20-24                     752     1001000    0.0    0.0     0.0    0.0      0         0
+      unId                           Data.Vector.Fusion.Util                  src/Data/Vector/Fusion/Util.hs:25:21-24                  750     1001000    0.0    0.0     0.0    0.0      0         0
+     generateFractal.blockSize       Main                                     app/Main.hs:160:5-60                                     708           1    0.0    0.0     0.0    0.0      0        16
+     generateFractal.numBlocks       Main                                     app/Main.hs:161:5-56                                     707           1    0.0    0.0     0.0    0.0      0        16
+     generateFractal.rows            Main                                     app/Main.hs:(163,5)-(170,26)                             696           1    0.3    0.0    99.0   99.8     36      8760
+      array#                         Data.Primitive.Array                     Data/Primitive/Array.hs:69:5-10                          725     1001000    0.0    0.0     0.0    0.0      0         0
+      rnf                            Main                                     app/Main.hs:23:5-54                                      738     1000000    0.0    0.0     0.0    0.0      0         0
+      unId                           Data.Vector.Fusion.Util                  src/Data/Vector/Fusion/Util.hs:25:21-24                  714        1017    0.0    0.0     0.0    0.0      0         0
+      sElems                         Data.Vector.Fusion.Bundle.Monadic        src/Data/Vector/Fusion/Bundle/Monadic.hs:121:30-35       715        1008    0.0    0.0     0.0    0.0      0         0
+      marray#                        Data.Primitive.Array                     Data/Primitive/Array.hs:112:5-11                         748           1    0.0    0.0     0.0    0.0      0         0
+      parMap                         Control.Parallel.Strategies              Control/Parallel/Strategies.hs:616:1-48                  697           1    0.0    0.0    98.7   99.8      0       992
+       generateFractal.rows.\        Main                                     app/Main.hs:(165,13)-(169,39)                            717           8    0.0    0.0    98.7   99.8      0    195968
+        marray#                      Data.Primitive.Array                     Data/Primitive/Array.hs:112:5-11                         724        1008    0.0    0.0     0.0    0.0      0         0
+        unId                         Data.Vector.Fusion.Util                  src/Data/Vector/Fusion/Util.hs:25:21-24                  723        1008    0.0    0.0     0.0    0.0      0         0
+        generateRow                  Main                                     app/Main.hs:(147,1)-(152,35)                             726        1000    5.7    0.4    98.7   99.8    622  88168000
+         marray#                     Data.Primitive.Array                     Data/Primitive/Array.hs:112:5-11                         731     1001000    0.0    0.0     0.0    0.0      0         0
+         unId                        Data.Vector.Fusion.Util                  src/Data/Vector/Fusion/Util.hs:25:21-24                  730     1001000    0.0    0.0     0.0    0.0      0         0
+         generateRow.\               Main                                     app/Main.hs:(149,9)-(152,35)                             732     1000000   56.6   70.6    92.9   99.4   6143 14646816520
+          generateRow.\.result       Main                                     app/Main.hs:151:13-39                                    735     1000000   36.4   28.9    36.4   28.9   3949 5991799136
+          generateRow.\.sx           Main                                     app/Main.hs:149:13-74                                    734     1000000    0.0    0.0     0.0    0.0      0         0
+          generateRow.\.sy           Main                                     app/Main.hs:150:13-61                                    733     1000000    0.0    0.0     0.0    0.0      0     16000
+          sElems                     Data.Vector.Fusion.Bundle.Monadic        src/Data/Vector/Fusion/Bundle/Monadic.hs:121:30-35       742      714521    0.0    0.0     0.0    0.0      0         0
+          unId                       Data.Vector.Fusion.Util                  src/Data/Vector/Fusion/Util.hs:25:21-24                  741      714521    0.0    0.0     0.0    0.0      0         0
+         sChunks                     Data.Vector.Fusion.Bundle.Monadic        src/Data/Vector/Fusion/Bundle/Monadic.hs:122:30-36       729        1000    0.0    0.0     0.0    0.0      0         0
+         sSize                       Data.Vector.Fusion.Bundle.Monadic        src/Data/Vector/Fusion/Bundle/Monadic.hs:124:30-34       728        1000    0.0    0.0     0.0    0.0      0         0
+         upperBound                  Data.Vector.Fusion.Bundle.Size           src/Data/Vector/Fusion/Bundle/Size.hs:(129,1)-(131,30)   727        1000    0.0    0.0     0.0    0.0      0         0
+        generateFractal.rows.\.end   Main                                     app/Main.hs:166:17-53                                    719           8    0.0    0.0     0.0    0.0      0       112
+        generateFractal.rows.\.start Main                                     app/Main.hs:165:17-42                                    718           8    0.0    0.0     0.0    0.0      0         0
+        sChunks                      Data.Vector.Fusion.Bundle.Monadic        src/Data/Vector/Fusion/Bundle/Monadic.hs:122:30-36       722           8    0.0    0.0     0.0    0.0      0         0
+        sSize                        Data.Vector.Fusion.Bundle.Monadic        src/Data/Vector/Fusion/Bundle/Monadic.hs:124:30-34       721           8    0.0    0.0     0.0    0.0      0         0
+        upperBound                   Data.Vector.Fusion.Bundle.Size           src/Data/Vector/Fusion/Bundle/Size.hs:(129,1)-(131,30)   720           8    0.0    0.0     0.0    0.0      0         0
+       using                         Control.Parallel.Strategies              Control/Parallel/Strategies.hs:338:1-35                  698           1    0.0    0.0     0.0    0.0      0        88
+        runEval                      Control.Parallel.Strategies              Control/Parallel/Strategies.hs:219:1-42                  700           0    0.0    0.0     0.0    0.0      0         0
+       parList                       Control.Parallel.Strategies              Control/Parallel/Strategies.hs:552:1-24                  706           0    0.0    0.0     0.0    0.0      0       192
+        rparWith                     Control.Parallel.Strategies              Control/Parallel/Strategies.hs:494:1-32                  712           0    0.0    0.0     0.0    0.0      0       704
+         parEval                     Control.Parallel.Strategies              Control/Parallel/Strategies.hs:(513,1)-(518,28)          713           8    0.0    0.0     0.0    0.0      0       512
+          runEval                    Control.Parallel.Strategies              Control/Parallel/Strategies.hs:219:1-42                  716           0    0.0    0.0     0.0    0.0      0       128
+      sChunks                        Data.Vector.Fusion.Bundle.Monadic        src/Data/Vector/Fusion/Bundle/Monadic.hs:122:30-36       747           1    0.0    0.0     0.0    0.0      0         0
+      sSize                          Data.Vector.Fusion.Bundle.Monadic        src/Data/Vector/Fusion/Bundle/Monadic.hs:124:30-34       746           1    0.0    0.0     0.0    0.0      0         0
+      upperBound                     Data.Vector.Fusion.Bundle.Size           src/Data/Vector/Fusion/Bundle/Size.hs:(129,1)-(131,30)   745           1    0.0    0.0     0.0    0.0      0         0
+     unsafeFreezeImage               Codec.Picture.Types                      src/Codec/Picture/Types.hs:347:1-75                      753           1    0.0    0.0     0.0    0.0      0         0
+  main.(...)                         Main                                     app/Main.hs:(185,9)-(192,68)                             679           1    0.0    0.0     0.0    0.0      0         0
+  main.aspectRatio                   Main                                     app/Main.hs:194:9-44                                     694           1    0.0    0.0     0.0    0.0      0        16
+  main.filename                      Main                                     app/Main.hs:(195,9)-(197,52)                             756           1    0.0    0.0     0.0    0.0      0         0
+  main.fractalType                   Main                                     app/Main.hs:(185,9)-(192,68)                             683           1    0.0    0.0     0.0    0.0      0        16
+  main.height                        Main                                     app/Main.hs:(185,9)-(192,68)                             681           1    0.0    0.0     0.0    0.0      0        16
+  main.img                           Main                                     app/Main.hs:(203,9)-(209,23)                             685           1    0.0    0.0     0.0    0.0      0        24
+   main.generator                    Main                                     app/Main.hs:(195,9)-(197,52)                             686           1    0.0    0.0     0.0    0.0      0        16
+  main.timeTaken                     Main                                     app/Main.hs:212:9-49                                     754           1    0.0    0.0     0.0    0.0      1       416
+  main.width                         Main                                     app/Main.hs:(185,9)-(192,68)                             678           1    0.0    0.0     0.0    0.0      0        16
+  savePngImage                       Codec.Picture                            src/Codec/Picture.hs:506:1-57                            755           1    0.0    0.0     0.7    0.0      4     41032
+   imageToPng                        Codec.Picture.Saving                     src/Codec/Picture/Saving.hs:(148,1)-(161,44)             757           1    0.0    0.0     0.6    0.0      2    281168
+    blitVector                       Codec.Picture.VectorByteConversion       src/Codec/Picture/VectorByteConversion.hs:(32,1)-(33,55) 827        1000    0.0    0.0     0.0    0.0      0     32000
+    chunkLength                      Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:189:7-17          788           4    0.0    0.0     0.0    0.0      0        16
+    chunkCRC                         Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:191:7-14          838           2    0.0    0.0     0.0    0.0      0        16
+    chunkType                        Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:190:7-15          835           2    0.0    0.0     0.0    0.0      0        32
+    bitDepth                         Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:75:7-14           763           1    0.0    0.0     0.0    0.0      0        16
+    chunkData                        Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:192:7-15          837           1    0.0    0.0     0.0    0.0      0         0
+    chunks                           Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:172:7-12          778           1    0.0    0.0     0.0    0.0      0         0
+    colourType                       Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:76:7-16           764           1    0.0    0.0     0.0    0.0      0         0
+    compressionMethod                Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:77:7-23           765           1    0.0    0.0     0.0    0.0      0        16
+    encodeMetadatas                  Codec.Picture.Png.Internal.Metadata      src/Codec/Picture/Png/Internal/Metadata.hs:166:1-70      779           1    0.0    0.0     0.0    0.0      0        32
+     lookup                          Codec.Picture.Metadata                   src/Codec/Picture/Metadata.hs:(256,1)-(260,23)           782           0    0.0    0.0     0.0    0.0      0        16
+    filterMethod                     Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:78:7-18           766           1    0.0    0.0     0.0    0.0      0        16
+    header                           Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:171:7-12          761           1    0.0    0.0     0.0    0.0      0         0
+    height                           Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:74:7-12           762           1    0.0    0.0     0.0    0.0      0        16
+    interlaceMethod                  Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:79:7-21           767           1    0.0    0.0     0.0    0.0      0         0
+    mkRawChunk                       Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:(196,1)-(201,3)   789           1    0.0    0.0     0.0    0.0      0        64
+     pngComputeCrc                   Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:(443,1)-(447,52)  839           0    0.0    0.0     0.0    0.0      5      3184
+      unBox                          Data.Stream.Monadic                      src/Data/Stream/Monadic.hs:116:20-24                     841      689483    0.0    0.0     0.0    0.0      0         0
+      unId                           Data.Vector.Fusion.Util                  src/Data/Vector/Fusion/Util.hs:25:21-24                  840      689483    0.0    0.0     0.0    0.0      0         0
+    width                            Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:73:7-11           760           1    0.0    0.0     0.0    0.0      0        16
+    compress                         Codec.Compression.Zlib                   Codec/Compression/Zlib.hs:98:1-45                        796           0    0.0    0.0     0.6    0.0      0         0
+     compressWith                    Codec.Compression.Zlib                   Codec/Compression/Zlib.hs:111:1-43                       797           0    0.0    0.0     0.6    0.0      0         0
+      compress                       Codec.Compression.Zlib.Internal          Codec/Compression/Zlib/Internal.hs:(484,1)-(486,61)      798           0    0.0    0.0     0.6    0.0      0    833824
+       runStream                     Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(420,1)-(424,69)       802        2045    0.0    0.0     0.6    0.0      2   1438176
+        deflate                      Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(239,1)-(255,15)       825        2017    0.0    0.0     0.5    0.0      0    209768
+         unsafeLiftIO                Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(429,1)-(431,49)       826        6051    0.5    0.0     0.5    0.0     55    209768
+        pushOutputBuffer             Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(176,1)-(194,16)       823          43    0.0    0.0     0.0    0.0      0         0
+         unsafeLiftIO                Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(429,1)-(431,49)       824         129    0.0    0.0     0.0    0.0      0      2064
+        unsafeLiftIO                 Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(429,1)-(431,49)       822          43    0.0    0.0     0.0    0.0      1    705544
+        deflateInit                  Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(918,1)-(928,71)       809           1    0.0    0.0     0.0    0.0      0        80
+         unsafeLiftIO                Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(429,1)-(431,49)       811           2    0.0    0.0     0.0    0.0      0       752
+        pushInputBuffer              Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(136,1)-(151,60)       813           1    0.0    0.0     0.0    0.0      0         0
+         unsafeLiftIO                Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(429,1)-(431,49)       814        8000    0.0    0.0     0.0    0.0      0    255952
+        finalise                     Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:949:1-63               833           0    0.0    0.0     0.0    0.0      0         0
+         unsafeLiftIO                Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(429,1)-(431,49)       834           1    0.0    0.0     0.0    0.0      0       104
+        inputBufferEmpty             Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:158:1-48               816           0    0.0    0.0     0.0    0.0      0    290520
+         unsafeLiftIO                Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(429,1)-(431,49)       817        4035    0.0    0.0     0.0    0.0      1    129120
+        outputBufferFull             Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:231:1-57               819           0    0.0    0.0     0.0    0.0      1   1322944
+         unsafeLiftIO                Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(429,1)-(431,49)       821        6050    0.0    0.0     0.0    0.0      0    193600
+        popOutputBuffer              Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(202,1)-(214,38)       830           0    0.0    0.0     0.0    0.0      0       688
+       pushInputBuffer               Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(136,1)-(151,60)       828        1999    0.0    0.0     0.0    0.0      0         0
+       foldCompressStreamWithInput   Codec.Compression.Zlib.Internal          Codec/Compression/Zlib/Internal.hs:(447,1)-(461,16)      799           0    0.0    0.0     0.0    0.0      0    160040
+       mkState                       Codec.Compression.Zlib.Stream            Codec/Compression/Zlib/Stream.hsc:(406,1)-(417,57)       801           0    0.0    0.0     0.0    0.0      0       264
+    pngComputeCrc                    Codec.Picture.Png.Internal.Type          src/Codec/Picture/Png/Internal/Type.hs:(443,1)-(447,52)  769           0    0.0    0.0     0.0    0.0      0       104
+     unBox                           Data.Stream.Monadic                      src/Data/Stream/Monadic.hs:116:20-24                     777          17    0.0    0.0     0.0    0.0      0         0
+     unId                            Data.Vector.Fusion.Util                  src/Data/Vector/Fusion/Util.hs:25:21-24                  770          17    0.0    0.0     0.0    0.0      0         0

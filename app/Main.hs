@@ -24,7 +24,7 @@ instance NFData PixelRGB8 where
 
 ---- Constants moved to top level
 maxIter :: Int
-maxIter = 1000
+maxIter = 10000
 
 bailoutRadius :: Double
 bailoutRadius = sqrt 8 -- magnitude squared
@@ -33,8 +33,8 @@ juliaC :: Complex Double
 juliaC = (-0.9) :+ 0.4  -- This gives a nice looking Julia set
 
 defaultWidth, defaultHeight :: Int
-defaultWidth  = 1000
-defaultHeight = 1000
+defaultWidth  = 10000
+defaultHeight = 10000
 
 defaultZoom, defaultCenterX, defaultCenterY :: Double
 defaultZoom   = 16e-3 -- Bigger values = less zoom
